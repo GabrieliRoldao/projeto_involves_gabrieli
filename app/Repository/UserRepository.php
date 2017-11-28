@@ -31,7 +31,7 @@ class UserRepository
             return ['status' => 'success', 'obj' => $user];
         } catch (\Exception $e) {
             DB::rollback();
-            return ['status' => 'error', 'message' => 'Erro ao salvar dados'];
+            return ['status' => 'error', 'message' => $e->getMessage()];
         }
     }
 
