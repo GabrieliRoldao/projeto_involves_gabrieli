@@ -51,7 +51,7 @@
             "@php artisan package:discover"
         ],
         "compile": [
-            "chmod 755 app/public/avatares/"
+            "chmod 755 public/avatares/"
         ]
     },
     "config": {
