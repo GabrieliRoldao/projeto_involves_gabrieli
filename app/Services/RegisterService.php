@@ -9,13 +9,6 @@ use \App\Repository\UserRepository;
 
 class RegisterService
 {
-    private $userActions;
-
-    public function __construct()
-    {
-        $this->userActions = new UserRepository();
-    }
-
     public function validateUser(array $user)
     {
         $validacao = Validator::make($user, $this->regras(), $this->mensagens());
@@ -23,7 +16,8 @@ class RegisterService
             return ['status' => 'error', 'obj' => $validacao];
         }
 
-        $save = $this->userActions->saveUser($user);
+        $userRepository = new \App\Repository\UserRepository();
+        $save = $userRepository->saveUser($user);
         return $save;
     }
 

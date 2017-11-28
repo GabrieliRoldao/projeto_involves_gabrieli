@@ -13,7 +13,6 @@ class HomeService
         $this->userRepository = new UserRepository();
     }
 
-
     public function allUsers()
     {
         $users = $this->userRepository->users();

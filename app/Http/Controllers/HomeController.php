@@ -10,22 +10,13 @@ class HomeController extends Controller
 {
     private $homeService;
 
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
     public function __construct()
     {
         $this->middleware('auth');
         $this->homeService = new HomeService();
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function index()
     {
         $users = $this->homeService->allUsers();

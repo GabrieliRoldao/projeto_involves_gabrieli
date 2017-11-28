@@ -12,8 +12,6 @@
 */
 
 Route::get('/', function () {
-    //return view('welcome');
-    //return view('index');
     return redirect()->route('login');
 });
 
@@ -25,3 +23,8 @@ Route::post('/register', 'Auth\RegisterCustomizedController@register')->name('re
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/storage/app/public/avatares/{avatar}', 'HomeController@avatar')->name('home.avatar');
 Route::get('/find/user/{id}', 'HomeController@findUser')->name('home.find_user');
+
+
+Route::get('/password/reset', function (){
+    abort(404);
+});
