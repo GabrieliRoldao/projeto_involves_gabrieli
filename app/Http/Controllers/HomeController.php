@@ -16,7 +16,7 @@ class HomeController extends Controller
         $this->homeService = new HomeService();
     }
 
-    
+
     public function index()
     {
         $users = $this->homeService->allUsers();
